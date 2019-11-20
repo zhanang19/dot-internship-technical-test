@@ -11,4 +11,4 @@
 |
 */
 
-
+Route::get('/', 'ViewTaskOneController')->name('task-one');
