@@ -34,4 +34,14 @@ return [
         'secret' => env('SPARKPOST_SECRET'),
     ],
 
+    'rajaongkir' => [
+        'api_key' => env('RAJAONGKIR_API_KEY', ''),
+        'base_url' => [
+            'starter' => 'https://api.rajaongkir.com/starter/',
+            'basic' => 'https://api.rajaongkir.com/basic/',
+            'pro' => 'https://pro.rajaongkir.com/api/',
+        ],
+        'package' => env('RAJAONGKIR_PACKAGE', 'starter'),
+    ],
+
 ];
