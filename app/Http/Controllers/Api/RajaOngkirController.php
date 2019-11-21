@@ -15,6 +15,8 @@ class RajaOngkirController extends Controller
      * @param   string  $httpMethod HTTP method
      * 
      * @return  array
+     * 
+     * @throws  \Exception
      */
     private function apiCall(string $endpoint, array $data = [], string $httpMethod = 'GET')
     {
@@ -98,6 +100,15 @@ class RajaOngkirController extends Controller
         }
     }
 
+    /**
+     * RajaOngkir get city data
+     * 
+     * @param   \Illuminate\Http\Request  $request
+     * @param   string  $provinceId
+     * @param   string  $cityId
+     * 
+     * @return  \Illuminate\Http\Response
+     */
     public function getCities(Request $request, $provinceId, $cityId = null)
     {
         $data = [
