@@ -97,4 +97,29 @@ class RajaOngkirController extends Controller
             return $this->error([], $e->getCode() . ': ' . $e->getMessage(), 500);
         }
     }
+
+    public function getCities(Request $request, $provinceId, $cityId = null)
+    {
+        $data = [
+            'province' => $provinceId,
+            'id' => $cityId
+        ];
+        try {
+            $result = collect($this->apiCall('city', $data));
+            $keyword = $request->query('keyword');
+            if (! empty($keyword) && is_null($cityId)) {
+                $result = $result->reject(function ($item) use ($keyword) {
+                        // reject all city that not match to keyword
+                        return (stripos($item->city_name, $keyword) === false);
+                    })
+                    ->values();
+            }
+            if ($result->isEmpty()) {
+                return $this->error([], 'Data not found.', 404);
+            }
+            return $this->result($result);
+        } catch (\Exception $e) {
+            return $this->error([], $e->getCode() . ': ' . $e->getMessage(), 500);
+        }
+    }
 }
