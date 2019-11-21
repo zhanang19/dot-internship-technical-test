@@ -26,4 +26,37 @@
  2. See the results in JSON format
 
 ## Task 2
+### Available endpoint
+ - Get all provinces : [`http://127.0.0.1:8000/api/provinces`](http://127.0.0.1:8000/api/provinces)
+ - Get province by province id : [`http://127.0.0.1:8000/api/provinces/{provinceId}`](http://127.0.0.1:8000/api/provinces/1)
+ - Search province by province name : [`http://127.0.0.1:8000/api/provinces?keyword={keyword}`](http://127.0.0.1:8000/api/provinces/?keyword=karta)
+ - Get cities belongs to province id : [`http://127.0.0.1:8000/api/provinces/{provinceId}/cities`](http://127.0.0.1:8000/api/provinces/1/cities)
+ - Get city belongs to province id by city id : [`http://127.0.0.1:8000/api/provinces/{provinceId}/cities/{id}`](http://127.0.0.1:8000/api/provinces/1/cities/114)
+ - Search cities belongs to province id by city name : [`http://127.0.0.1:8000/api/provinces/{provinceId}/cities?keyword={keyword}`](http://127.0.0.1:8000/api/provinces/1/cities?keyword=karta)
 
+### Format Response
+ In a successful response, API will return a response with HTTP Status Code 2xx and JSON in this format:
+
+    {
+        "success": true,
+        "message": "Request success.",
+        "data": {
+            "province_id": "1",
+            "province": "Bali",
+        }
+    }
+
+ > _data_ key in the response must be either a single resource or an array of resource
+
+ Then, in a failed response, API will return a response with HTTP Status Code 4xx or 5xx and JSON in this format:
+
+    {
+        "success": false,
+        "message": "Request failed.",
+        "errors": [
+            "province_id": "Province ID is invalid.",
+            "city_id": "City ID is invalid.",
+        ]
+    }
+
+ > _errors_ key in the failed response must be an array that every _key_ is taken from the request body key and _value_ declare the error message
