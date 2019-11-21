@@ -13,4 +13,7 @@ use Illuminate\Http\Request;
 |
 */
 
-
+Route::group(['namespace' => 'Api'], function () {
+    Route::get('provinces/{provinceId?}', 'RajaOngkirController@getProvinces');
+    Route::get('provinces/{provinceId}/cities/{cityId?}', 'RajaOngkirController@getCities');
+});
