@@ -1,4 +1,5 @@
 # DOT Intership Technical Test
+ This project is a simple application that build by me to fulfill the intership selection at [PT. Digdaya Olah Teknologi Indonesia](https://dot.co.id) 
 
 ## Requirements
  I use a Laravel Framework 5.8 that need this requirement:
@@ -13,6 +14,12 @@
  - PDO PHP Extension
  - Tokenizer PHP Extension
  - XML PHP Extension
+
+## Installation
+ - Clone this repository
+ - Copy `.env.example` to `.env` and update RajaOngkir API Key and Package with your own
+ - Run `composer install`
+ - You can start the development server using command `php artisan serve`
 
 ## Task 1
 ### Default Array
