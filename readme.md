@@ -38,7 +38,7 @@
  - Get province by province id : [`http://127.0.0.1:8000/api/provinces/{provinceId}`](http://127.0.0.1:8000/api/provinces/1)
  - Search province by province name : [`http://127.0.0.1:8000/api/provinces?keyword={keyword}`](http://127.0.0.1:8000/api/provinces/?keyword=karta)
  - Get cities belongs to province id : [`http://127.0.0.1:8000/api/provinces/{provinceId}/cities`](http://127.0.0.1:8000/api/provinces/1/cities)
- - Get city belongs to province id by city id : [`http://127.0.0.1:8000/api/provinces/{provinceId}/cities/{id}`](http://127.0.0.1:8000/api/provinces/1/cities/114)
+ - Get city belongs to province id by city id : [`http://127.0.0.1:8000/api/provinces/{provinceId}/cities/{cityId}`](http://127.0.0.1:8000/api/provinces/1/cities/114)
  - Search cities belongs to province id by city name : [`http://127.0.0.1:8000/api/provinces/{provinceId}/cities?keyword={keyword}`](http://127.0.0.1:8000/api/provinces/1/cities?keyword=karta)
 
 ### Format Response
